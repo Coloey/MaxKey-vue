@@ -1,0 +1,156 @@
+html,
+body {
+  height: 100%;
+  background-color: #fff;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.form-signin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 460px;
+  padding: 40px;
+  margin: auto;
+}
+.form-signin h3 {
+  padding-bottom: 40px;
+}
+.form-signin .identity {
+  width: 460px;
+  display: flex;
+  align-items: center;
+  height: 44px;
+  justify-content: center;
+  padding: 20px;
+}
+.form-signin .identity .icon {
+  width: 32px;
+  height: 32px;
+}
+.form-signin .identity span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 230px;
+  padding: 20px;
+}
+.form-signin .activeOne .oneSpan {
+  border-bottom: 3px solid #1890ff;
+}
+.form-signin .activeOne .oneSpan .icon {
+  fill: #1890ff;
+}
+.form-signin .activeTwo .twoSpan {
+  border-bottom: 3px solid #1890ff;
+}
+.form-signin .activeTwo .twoSpan .icon {
+  fill: #1890ff;
+}
+.form-signin .find-type {
+  width: 460px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+.form-signin .find-type span {
+  width: 230px;
+  border: 1px solid #e5e5e5;
+  padding: 10px 0;
+}
+.form-signin .find-type span:hover {
+  color: #1890ff;
+  cursor: pointer;
+}
+.form-signin .find-type span:active {
+  border: 1px solid #1890ff;
+}
+.form-signin .input {
+  width: 460px;
+  min-height: 40px;
+  text-shadow: 0 1px 0 #fff;
+  border: 1px solid #e5e5e5;
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  padding-left: 25px;
+}
+.form-signin .input::placeholder {
+  color: #bfbfbf;
+}
+.form-signin .input:focus {
+  outline: none;
+}
+.form-signin .input:hover {
+  border-color: #40a9ff;
+  border-right-width: 1px !important;
+}
+.form-signin .phone {
+  position: relative;
+}
+.form-signin .check {
+  position: relative;
+}
+.form-signin .check:hover button {
+  border-left: 1px solid #1890ff;
+}
+.form-signin .check button {
+  width: 112px;
+  height: 41px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.form-signin .check button:hover {
+  cursor: pointer;
+  border: 1px solid #1890ff;
+  color: #1890ff;
+}
+.form-signin .label {
+  position: absolute;
+  top: 20px;
+  z-index: 1;
+  left: 15px;
+}
+.form-signin .imageCode {
+  position: relative;
+}
+.form-signin .imageCode .code {
+  position: absolute;
+  top: 10px;
+  right: 7px;
+}
+.form-signin .next {
+  width: 460px;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+.form-signin .next .btn {
+  height: 40px;
+  width: 80px;
+  background: #2E9AFE;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+}
+.form-signin .next a {
+  color: #1890ff;
+  text-decoration: none;
+}
