@@ -9,3 +9,4 @@ declare module '*.svg' {
   export default content
 }
 declare module 'crypto-js'
+declare module "js-cookie"

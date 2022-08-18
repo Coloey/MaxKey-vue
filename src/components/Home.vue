@@ -7,6 +7,9 @@
                 <span>Key</span>
                 单点登录认证系统
             </div>
+            <router-link to="/passport/logout">
+                <Icon iconClass="quit"></Icon>
+            </router-link>
         </header>
         <div class="nav">    
             <ul>
@@ -28,6 +31,7 @@
 
 <script lang="ts" setup>
 import Footer from "./Footer.vue"
+import Icon from "./Icon.vue"
 </script>
 
 <style lang="less" scoped>
@@ -50,6 +54,9 @@ header {
     height: 64px;
     border-bottom: 1px solid #e5e5e5;
     padding-left: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
     .title {
       display: flex;
       height: 100%;
@@ -63,6 +70,11 @@ header {
       span {
         color: #ffd700
       }
+    }
+    a {
+        position: absolute;
+        right: 16px;
+
     }
     
   }

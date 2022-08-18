@@ -125,12 +125,11 @@
 import {reactive,ref,onBeforeMount} from "vue"
 import Header from "./Header.vue"
 import Icon from "./Icon.vue"
-import Code from "./Code.vue"
 import Footer from "./Footer.vue"
 import {ElMessage, ElForm,ElFormItem,ElInput,ElButton,FormInstance} from "element-plus"
 import {AxiosError,AxiosResponse} from "axios"
 import {api} from "../utils/api"
-import { conditionalExpression } from "@babel/types"
+
 interface Form{
   mobile: string,
   email:string,
@@ -185,13 +184,11 @@ const getImageCaptcha=():void=>{
       res=res.data
       imageCaptcha.value = res.data.image
       state = res.data.state
-
     })
     .catch((err:AxiosError)=>{
       ElMessage.error(err.message)
       Promise.reject(err)
     })
-
 }
 onBeforeMount(()=>{
   getImageCaptcha()

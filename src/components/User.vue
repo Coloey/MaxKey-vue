@@ -116,6 +116,7 @@ const onSubmit=(e:MouseEvent):void=>{
         res=res.data
         if(res.code === 0){
             ElMessage.success("更新成功")
+            localStorage.setItem("user",JSON.stringify(form))
         }else{
              ElMessage.error("更新失败")
         }

@@ -1,5 +1,5 @@
 <template>
-    <header>
+    <header class="header">
         <div className= 'title'>
         <img src="../assets/logo.jpg" alt="" />
             Max
@@ -13,7 +13,7 @@
 </script>
 
 <style lang="less">
-header {
+.header {
     height: 64px;
     border-bottom: 1px solid #e5e5e5;
     padding-left: 198px;

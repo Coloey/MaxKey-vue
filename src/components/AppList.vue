@@ -1,7 +1,7 @@
 <template>
     <ul>
         <template v-for="app in appList">
-            <li @click="onAuthz($event,app.id)"><img :src="app.iconBase64" alt=""></li>
+            <li @click="onAuthz($event,app.id)"><img :src="app.iconBase64" alt=""/></li>
         </template> 
     </ul>   
 </template>

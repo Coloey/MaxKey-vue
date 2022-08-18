@@ -96,7 +96,6 @@ import CONSTS from "../shared/index"
 import Icon from "./Icon.vue"
 import {ElLoading,ElMessage} from "element-plus"
 import {useRouter} from "vue-router"
-//import Code from "./Code.vue"
 import Header from "./Header.vue"
 import Footer from "./Footer.vue"
 interface Form {
@@ -123,12 +122,12 @@ let visible=ref(false)
 let imageCaptcha= ref<string>("")
 
 let providers = ref<object[]>([])//reactive不可以监视？
-let qrScan = ref<string>("")
+let qrScan = ""
 const getUrl=(value:string)=>{
   let params=window.location.search.substring(1).split("&")
   for(let i = 0; i < params.length; i++){
     let param=params[i].split('=')
-    if(param[0]==='value'){
+    if(param[0]===value){
       return param[1]
     }
   }
@@ -143,8 +142,6 @@ const socialauth=(provider:string): void =>{
     // debugger
     window.location.href = res.data.data
   })
-
-
 }
 
 const congressLogin=(congress:string)=>{
@@ -183,7 +180,7 @@ onBeforeMount(()=>{
       }else{        
         if(res.data.state){          
           providers.value=res.data.socials.providers
-          qrScan.value = res.data.socials.qrScan
+          qrScan = res.data.socials.qrScan
           state =res.data.state
           captchaType = res.data.captcha
           if(captchaType !== 'NONE'){
@@ -222,7 +219,6 @@ const login=()=>{
    if(form.username===''|| form.password===''|| form.captcha===''){
       return;
    }
-   
     localStorage.setItem(CONSTS.REMEMBER,rememberMe.value === true?"true":"false")
     api.login(
       {
@@ -262,15 +258,15 @@ const switchTab=(index:number):void=>{
   if(index===2){
     isqrCode.value=true
     localStorage.setItem('user',JSON.stringify({}))
-    api.scanqrcode(qrScan.value)
+    api.scanqrcode(qrScan)
     .then((res:AxiosResponse)=>{
       res=res.data
       if(res.code === 0){
-        if(qrScan.value === 'workweixin'){
+        if(qrScan === 'workweixin'){
           qrScanWorkweixin(res.data)
-        }else if(qrScan.value === 'dingtalk'){
+        }else if(qrScan === 'dingtalk'){
           qrScanDingtalk(res.data)
-        }else if(qrScan.value === 'feishu'){
+        }else if(qrScan  === 'feishu'){
           qrScanFeishu(res.data)
         }
       }

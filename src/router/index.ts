@@ -26,9 +26,21 @@ export default createRouter({
                     path:'user',
                     component:()=>Promise.resolve(import("../components/User.vue"))
                 }
-            ]
+            ]         
+        },
+        {
+            path:'/passport/logout',
+            component: ()=>Promise.resolve(import("../components/Logout.vue"))
 
-            
+        },
+        {
+            path:'/404',
+            name:'NotFound',
+            component:()=>Promise.resolve(import('@/components/NotFound.vue'))
+
+        },{
+            path:'/:catchAll(.*)',
+            redirect: '/404'
         }
     ]
 })
